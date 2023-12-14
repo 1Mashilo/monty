@@ -1,14 +1,17 @@
+#ifndef __MONTY_H__
+#define __MONTY_H__
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <ctype.h>
 
-#ifndef MONTY_H
-#define MONTY_H
+#define STACK 0
+#define QUEUE 1
+#define DELIMS " \n\t\a\b"
+
+/* GLOBAL OPCODE TOKENS */
+extern char **op_toks;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -20,26 +23,10 @@
  */
 typedef struct stack_s
 {
-	int value;
+	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-/**
- * struct bus_s - variables -args, file, line content
- * @arg: value
- * @file: pointer to monty file
- * @content: line content
- * @lifo: flag change stack <-> queue
- * Description: carries values through the program
- */
-typedef struct bus_s
-{
-	char *arg;
-	FILE *file;
-	char *content;
-	int lifo_mode;
-}  bus_t;
-extern bus_t bus;
 
 /**
  * struct instruction_s - opcode and its function
@@ -55,28 +42,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
-void push(stack_t **head, unsigned int number);
-void pall(stack_t **stack, unsigned int line_number);
-void print_top(stack_t **head, unsigned int counter);
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void free_stack(stack_t *head);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **head, unsigned int counter);
-void add(stack_t **head, unsigned int counter);
-void nop(stack_t **head, unsigned int counter);
-void _sub(stack_t **head, unsigned int counter);
-void _div(stack_t **head, unsigned int counter);
-void _mul(stack_t **head, unsigned int counter);
-void mod(stack_t **head, unsigned int counter);
-void printCharFromTop(stack_t **stack, unsigned int line_number);
-void printStringFromTop(stack_t **stack, unsigned int line_number);
-void rotateStackBottomToTop(stack_t **head,  __attribute__((unused)) unsigned int counter);
-void rotateStackTopToBottom(stack_t **head, __attribute__((unused)) unsigned int counter);
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsigned int counter);
+/* PRIMARY INTERPRETER FUNCTIONS */
+void free_stack(stack_t **stack);
+int init_stack(stack_t **stack);
+int check_mode(stack_t *stack);
+void free_tokens(void);
+unsigned int token_arr_len(void);
+int run_monty(FILE *script_fd);
+void set_op_tok_error(int error_code);
+
+void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pall(stack_t **stack, unsigned int line_number);
+
 #endif
