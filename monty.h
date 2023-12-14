@@ -8,8 +8,6 @@
 #include <string.h>
 #include <ctype.h>
 
-bus_t bus = {NULL, NULL, NULL, 0};
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -40,7 +38,7 @@ typedef struct bus_s
 	char *content;
 	int lifi;
 }  bus_t;
-extern bus_t bus;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode

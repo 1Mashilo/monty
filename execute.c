@@ -1,4 +1,6 @@
 #include "monty.h"
+
+bus_t bus = {NULL, NULL, NULL, 0};
 /**
 * execute - executes the opcode
 * @stack: head linked list - stack
@@ -10,8 +12,7 @@
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", monty_push},
-                {"pall", monty_pall}, 
+				{"push", monty_push}, {"pall", monty_pall}, {"pint", monty_pint},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
