@@ -14,12 +14,12 @@ void f_stack(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * printStack - Prints the stack
+ * pall - Prints the stack
  * @stack: Pointer to the head of the stack
  * @line_number: Line number in the Monty file (unused)
  * Return: No return
  */
-void printStack(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
     stack_t *current_node;
     (void)line_number;

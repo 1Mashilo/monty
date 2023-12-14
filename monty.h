@@ -59,7 +59,7 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
 void push(stack_t **head, unsigned int number);
-void printStack(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 void print_top(stack_t **head, unsigned int counter);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void free_stack(stack_t *head);

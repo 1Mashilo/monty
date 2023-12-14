@@ -14,7 +14,7 @@ int execute(char *line, stack_t **stack, unsigned int line_number, FILE *file)
         {"push", push},
         {"pop", pop}, 
         {"stack", f_stack},
-        {"printStack", printStack},
+        {"pall", pall},
         {"printTopElemnt", print_top},
         {"rotateBottomElmnt", rotateStackBottomToTop},
         {"rotateTopElmnt", rotateStackTopToBottom},
