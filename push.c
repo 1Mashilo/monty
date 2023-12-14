@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * monty_push - add node to the stack
  * @head: stack head

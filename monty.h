@@ -17,6 +17,7 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
  */
+
 typedef struct stack_s
 {
 	int n;
@@ -38,7 +39,7 @@ typedef struct bus_s
 	char *content;
 	int lifi;
 }  bus_t;
-
+bus_t bus;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -56,4 +57,11 @@ typedef struct instruction_s
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
 void print_stack(stack_t **head, unsigned int counter);
+void monty_pop(stack_t **head, unsigned int counter);
+void free_stack(stack_t *head);
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
+void addnode(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
+void addqueue(stack_t **head, int n);
+void monty_pint(stack_t **head, unsigned int counter);
 #endif
