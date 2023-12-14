@@ -17,6 +17,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"swap", monty_swap},
 				{"add",   monty_add},
 				{"nop", monty_nop},
+				{"sub", monty_sub},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
