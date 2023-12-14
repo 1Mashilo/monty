@@ -65,7 +65,7 @@ int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void free_stack(stack_t *head);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **head, unsigned int counter);
-void addTopTwoElements(stack_t **head, unsigned int counter);
+void add(stack_t **head, unsigned int counter);
 void nop(stack_t **head, unsigned int counter);
 void _sub(stack_t **head, unsigned int counter);
 void _div(stack_t **head, unsigned int counter);

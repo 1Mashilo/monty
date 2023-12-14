@@ -7,7 +7,7 @@
  * @counter: Line number
  * Return: No return
  */
-void addTopTwoElements(stack_t **head, unsigned int counter)
+void add(stack_t **head, unsigned int counter)
 {
     stack_t *current;
     int stackSize = 0, sum;

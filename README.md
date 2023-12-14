@@ -1,5 +1,5 @@
 # 0x19. C - Stacks, Queues - LIFO, FIFO
-**About:** In this project, we created a simple interpreter for Monty ByteCodes. The interpreter reads a bytecode file and executes the bytecode commands.
+**About:** In this project, I created a simple interpreter for Monty ByteCodes. The interpreter reads a bytecode file and executes the bytecode commands.
 ### The Monty language
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. 
 
@@ -111,14 +111,14 @@ $
     push 5    $
       push    6        $
 $
-pall This is the end of our program. Monty is awesome!$
+print This is the end of our program. Monty is awesome!$
 mashilo@ubuntu:~/monty$
 ```
 * Some examples of using monty and its console output.
 
 |                        Example #1                      |                    Example #2                   |                      Example #3                           |
 |:-------------------------------------------------------|:------------------------------------------------|:----------------------------------------------------------|
-| ~/monty$ `cat -e bytecodes/00.m` <br> push 1$ <br> push 2$ <br> push 3$ <br> print$ <br> ~/monty$ `./monty bytecodes/00.m` <br> 3 <br> 2 <br> 1  | ~/monty$ `cat bytecodes/07.m`  <br> push 1 <br> push 2 <br> push 3 <br> print <br> pop <br> pall <br> pop <br> pall <br> pop <br> print <br>  ~/monty$ `./monty bytecodes/07.m`  <br> 3 <br> 2 <br> 1 <br> 2 <br> 1 <br> 1 | ~/monty$ `cat bytecodes/09.m` <br> push 1 <br> push 2 <br> push 3 <br> print <br> swap <br> pall <br> ~/monty$ `./monty bytecodes/09.m` <br> 3 <br> 2 <br> 1 <br> 2 <br> 3 <br> 1 |
+| ~/monty$ `cat -e bytecodes/00.m` <br> push 1$ <br> push 2$ <br> push 3$ <br> print$ <br> ~/monty$ `./monty bytecodes/00.m` <br> 3 <br> 2 <br> 1  | ~/monty$ `cat bytecodes/07.m`  <br> push 1 <br> push 2 <br> push 3 <br> print <br> pop <br> print <br> pop <br> pall <br> pop <br> print <br>  ~/monty$ `./monty bytecodes/07.m`  <br> 3 <br> 2 <br> 1 <br> 2 <br> 1 <br> 1 | ~/monty$ `cat bytecodes/09.m` <br> push 1 <br> push 2 <br> push 3 <br> print <br> swap <br> print <br> ~/monty$ `./monty bytecodes/09.m` <br> 3 <br> 2 <br> 1 <br> 2 <br> 3 <br> 1 |
 
 ## Authors
 [Mashilo Kgaladi](https://github.com/1Mashilo/monty/)
