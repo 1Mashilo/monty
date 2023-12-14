@@ -18,6 +18,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"add",   monty_add},
 				{"nop", monty_nop},
 				{"sub", monty_sub},
+				{"div", monty_div},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
