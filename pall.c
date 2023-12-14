@@ -27,3 +27,4 @@ void monty_pall(stack_t **head, unsigned int counter)
 		h = h->next;
 	}
 }
+
