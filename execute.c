@@ -20,7 +20,7 @@ int execute(char *line, stack_t **stack, unsigned int line_number, FILE *file)
         {"rotateTopElmnt", rotateStackTopToBottom},
         {"printStringFromTop", printStringFromTop},
         {"printCharFromTop",  printCharFromTop},
-        {"add", addTopTwoElements},
+        {"add", add},
         {NULL, NULL}
     };
 
